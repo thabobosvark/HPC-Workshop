@@ -27,4 +27,4 @@ The first members of team DC Spears and the first student mentors.
 
 ### Workshop
 
-The workshop is create with the goal of training and preparing students for real world HPC applications.
+The workshop is created with the goal of training and preparing students for real world HPC applications.
