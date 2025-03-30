@@ -14,7 +14,7 @@
 
 ### CPUT HPC Club 
 
-The CPUT HPC club was created by senior lecturer Mr. M.T. Adonis.
+The CPUT HPC club was created by CPUT lecturer Mr. M.T. Adonis.
 
 ![image](/img/Adonis_small.jpg)
 
