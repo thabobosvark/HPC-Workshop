@@ -155,5 +155,29 @@ If you struggle with this task you can skip it as it wont stop you from completi
 
 On the cluster machine:
 
-1. create a new folder in tutorial1 folder of the repo
-2. 
+1. Navigate to the app folder
+
+```bash
+cd ~/HPC-Workshop/tutorial1/app
+```
+
+2. Edit the `code.c` file and complete the **two** incomplete functions.
+
+```bash
+vim code.c
+```
+
+  - 1. Function to create a folder `void create_folder(char* name)`
+
+  Complete this function so that it used the char* name variable to make a folder with that name.
+
+  - 2. Function to create a file `void create_file(char* folder_name, char* group_name)`
+
+  Complete this function so that it creates a file in the folder where the name will get passed to char* folder_name. Then add the string char* group_name to the file.
+
+  - 3. Add a MakeFile to the app folder that has a make command to make the project, and a clean command to remove created files. The MakeFile should make object files as well as the project called app.
+
+  Rules :
+
+    - Do not edit the main.c or code.h files.
+    - Use the function prototypes provided.
