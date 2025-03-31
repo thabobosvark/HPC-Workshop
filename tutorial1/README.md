@@ -133,6 +133,11 @@ cd hpc-workshop/tutorial1/keys
 
 # Copy the moderators key to the ssh key folder
 cp <moderators_key> ~/.ssh/.
+
+# Navigate to ssh folder
+cd ~/.ssh
+
+# add <moderators_key> to authorized list
 ```
 
 ## Upload created key to repo
@@ -180,4 +185,7 @@ vim code.c
   Rules :
 
     - Do not edit the main.c or code.h files.
+
     - Use the function prototypes provided.
+
+    - Commit and push to repo fork
