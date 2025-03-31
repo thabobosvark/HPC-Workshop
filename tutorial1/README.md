@@ -129,7 +129,7 @@ Your **third task** is to add the moderators ssh key to the authorized list of k
 
 ```bash
 # Navigate to the key
-cd HPC-Workshop/tutorial1/keys
+cd hpc-workshop/tutorial1/keys
 
 # Copy the moderators key to the ssh key folder
 cp <moderators_key> ~/.ssh/.
@@ -141,7 +141,7 @@ Your forth task is to upload/commit your create private ssh key to forked repo.
 
 ```bash
 # Navigate to the keys folder
-cd HPC-Workshop/tutorial1/keys
+cd hpc-workshop/tutorial1/keys
 
 # Copy ssh key to repo folder
 cp ~/.ssh/<private_key> .
@@ -158,7 +158,7 @@ On the cluster machine:
 1. Navigate to the app folder
 
 ```bash
-cd ~/HPC-Workshop/tutorial1/app
+cd ~/hpc-workshop/tutorial1/app
 ```
 
 2. Edit the `code.c` file and complete the **two** incomplete functions.
