@@ -4,25 +4,16 @@ HPL requires a Message Passing Interface and a Basic Linear Algebra Subprogram.<
 ## Running your first benchmark
 In order to compile the HPL benchmark, the two dependencies need to be installed and setup.
 ### MPI: OpenMPI
-First, install OpenMPI from the repo:
+First, load OpenMPI from lmod:
 ```
-sudo dnf install openmpi openmpi-devel -y
+ml openmpi
 ```
-Next, run the following command to find where the OpenMPI C Compiler is:
+Next, run the following command to confirm it has been loaded and find where the OpenMPI C Compiler is:
 ```
 which mpicc
 ```
-Most likely, you encountered an issue here. This is because the path has not been properly set to point the compiler's location. To fix this, append to the ```${PATH}``` variable:
-```
-export PATH=/usr/lib64/openmpi/bin:${PATH}
-```
-Now run the command again, and you should have found the compiler correctly.
 ### BLAS: Atlas
-Next, get the BLAS libraries we will be testing:
-```
-sudo dnf install atlas atlas-devel -y
-```
-Run the following command to confirm the necessary libraries exist:
+Atlas has already been preinstalled for you. Run the following to confirm the library files:
 ```
 ls /usr/lib64/atlas
 ```
@@ -42,7 +33,7 @@ cp setup/Make.Linux_PII_CBLAS_gm Make.Tutorial3
 ```
 This template isn't usable as is, and needs to be editted. Open the file for editting and alter it so that the following parameters have these values:
 ```
-ARCH         = Basic
+ARCH         = Tutorial3
 
 MPdir        = /usr/lib64/openmpi
 MPlib        = $(MPdir)/lib/libmpi.so
@@ -111,10 +102,8 @@ Learn more about the HPL benchmark, either using online resources or the README 
 - Your output currently goes to the terminal. Change your configuration such that it goes into a file called ```Tutorial3.out``` instead.
 - Your benchmark currently runs multiple tests with a single call. Change the configuration to run only one test.
 - Your BLAS library, Atlas, is not the best choice. Try using a different set of libraries, such as Lapack or OpenBLAS.
-- Your MPI is outdated. Try compiling OpenMPI from source in order to get a more up-to-date version.<br>
 Upload ```HPL.dat```, ```xhpl```and your result to ```.../tut3/task/```. Include a file called ```improvements.txt``` containing a list of changes you have made. Any improvements not listed will be considered incomplete.<br>
 Scores will be compared across teams. The benchmark score will be marked upwards for the following checkpoints:
-- Output automatically goes into ```Tutorial3.out```: +2.0000e00
-- Benchmark only runs a single test: +3.0000e00
-- Benchmark uses different BLAS libraries (library files uploaded to repo): +8.0000e00
-- Benchmark uses MPI compiled from source, version >= v4.0.0: +1.2000e01
+- Output automatically goes into ```Tutorial3.out```: +3.0000e-01
+- Benchmark only runs a single test: +4.0000e-01
+- Benchmark uses different BLAS libraries: +7.0000e-01
