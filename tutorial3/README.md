@@ -28,7 +28,7 @@ tar -xf hpl-2.3.tar.gz
 Next, prepare the makefile by copying one of the templates:
 ```
 mv hpl-2.3 hpl
-cd hpl-2.3
+cd hpl
 cp setup/Make.Linux_PII_CBLAS_gm Make.Tutorial3
 ```
 This template isn't usable as is, and needs to be editted. Open the file for editting and alter it so that the following parameters have these values:
