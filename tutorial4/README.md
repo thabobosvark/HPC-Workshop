@@ -194,9 +194,9 @@ We will now consider what affect each parameter has on the outcome.
 
    When `qv_depth` is varied, we see an increase in time per simulation. The `depth` parameter is the number of discrete time steps during which the circuit can run gates before the qubits decohere. Thus the increase or decrease of `qv_depth` will proportionally increase or decrease simulation time.
 
-   | **Case 1** `qv_depth=5` | **Case 2** `qv_depth=10` |
-   |-------------------------|--------------------------|
-   | `num_qubits=(2,20)`, `qv_depth=5`, `num_shots=10`<br>![qubits 20, depth 5, shots 10](images/qv_experiment_qbt20_dep5_shot10.png) | `num_qubits=(2,20)`, `qv_depth=10`, `num_shots=10`<br>![qubits 20, depth 10, shots 10](images/qv_experiment_qbt20_dep10_shot10.png) |
+   | **Case 1** `qv_depth=5` | **Case 2** `qv_depth=10` | **Case 3** `qv_depth=15`  |
+   |-------------------------|--------------------------|---------------------------|
+   | `num_qubits=(2,20)`<br>`qv_depth=5`<br>`num_shots=10`<br><br> <img src="images/qv_experiment_qbt20_dep5_shot10.png" width="400"> | `num_qubits=(2,20)`<br>`qv_depth=10`<br>`num_shots=10`<br><br> <img src="images/qv_experiment_qbt20_dep10_shot10.png" width="400"> | `num_qubits=(2,20)`<br>`qv_depth=15`<br>`num_shots=10`<br><br> <img src="images/qv_experiment_qbt20_dep15_shot10.png" width="400"> |
 
    In the table above we see the vertical axis (y-axis) scale increase as `qv_depth` increases.
 
