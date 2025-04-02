@@ -23,6 +23,7 @@ IBM's Qiskit is an open-source [Software Development Kit (SDK)](https://www.ibm.
 
 
 > [!CAUTION]
+> 
 > This section aims to test your understanding of what you have learn so far. The python code below **will give an error** when you try to run it :grimacing: .
 > You will have to **debug** it to successfully meet the deliverables. Carefully read the error message as it may print out useful information such as a missing packages or the line where the error occurs.
 
@@ -83,6 +84,7 @@ IBM's Qiskit is an open-source [Software Development Kit (SDK)](https://www.ibm.
    ```
 
    > [!TIP]
+   > 
    > Printing out results will help you know if you have run the benchmark successfully.
 
 4. Parameterize the following variables for the QV experiment.<br>
@@ -141,6 +143,7 @@ Jupyter Notebooks provide a versatile and powerful environment for conducting sc
    * --no-browser, do not try to launch a browser directly on your head node.
 
    > [!NOTE]
+   > 
    > An resulting error are not due to the firewall as TCP port 8889 is already open on the nftables(the firewall).
 
 4. Carefully copy your `<TOKEN>` from the command line after successfully launching your JupyterLab server.
