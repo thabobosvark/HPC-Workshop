@@ -10,18 +10,19 @@
 
 
 ## Application Benchmarking Introduction
+
 In the previous tutorial, [Tutorial 3](../tutorial3/README.md), we learnt about **Synthetic benchmarks**. Now we will learn about **Application benchmarks**. HPC applications are widely used in scientific research and systems evaluation or benchmarking to address complex computational problems. These applications span various fields, including computational chemistry, computational fluid dynamics, cosmology / astrophysics, quantum mechanics, weather forecasting, genomics, to name a few...
 
 These applications are integral to advancing scientific research, enabling researchers to solve complex problems that are otherwise computationally prohibitive. They are also essential for evaluating and benchmarking the performance of high-performance computing systems, ensuring that they meet the demands of cutting-edge research and industrial applications.
 
 ## Qiskit
+
 IBM's Qiskit is an open-source [Software Development Kit (SDK)](https://www.ibm.com/quantum/qiskit) for working with quantum computers at the level of circuits, pulses, and algorithms. It provides tools for creating and manipulating quantum programs and running them on prototype quantum devices on IBM Quantum Platform or on simulators on a local computer.
 
 [Qiskit-Aer](https://github.com/Qiskit/) is an extension to the Qiskit SDK for using high performance computing resources to simulate quantum computers and programs. It provides interfaces to run quantum circuits with or without noise using a number of various simulation methods. *Qiskit-Aer* supports leveraging *MPI* to improve the performance of simulation.
 
 
 > [!CAUTION]
->
 > This section aims to test your understanding of what you have learn so far. The python code below **will give an error** when you try to run it :grimacing: .
 > You will have to **debug** it to successfully meet the deliverables. Carefully read the error message as it may print out useful information such as a missing packages or the line where the error occurs.
 
@@ -35,18 +36,18 @@ IBM's Qiskit is an open-source [Software Development Kit (SDK)](https://www.ibm.
 1. Create and Activate a New Virtual Environment.<br>
     Separate your python projects and ensure that they exist in their own, clean environments:
 
-    ```bash
-    python -m venv QiskitAer
-    source QiskitAer/bin/activate
-    ```
+   ```bash
+   python -m venv QiskitAer
+   source QiskitAer/bin/activate
+   ```
 
 2. Install `qiskit-aer`.<br>
-    ```bash
-    pip install qiskit-aer
-    
-    # Create benchmark python file
-    touch qv_experiment.py
-    ```
+   ```bash
+   pip install qiskit-aer
+   
+   # Create benchmark python file
+   touch qv_experiment.py
+   ```
 
 3. Save the following in a Python script `qv_experiment.py`:<br>
    ```python
@@ -96,6 +97,7 @@ IBM's Qiskit is an open-source [Software Development Kit (SDK)](https://www.ibm.
    ```
 
 ## Visualising QV Result
+
 Congratulations :partying_face: if you where able to solve the above problems. We managed to get a set of results, but what does that it mean? How can we better understand our data? The answer is *visulaising*.
 
 As humans we find charts, graphs and illustrations much easier to understand. Because these graphics aid understanding we will be taking out result from above and visualising it using Jupyterlab.
@@ -188,7 +190,8 @@ When the above code is run and visualised in JupyterLab, the image below is gene
 
 We will now consider what affect each parameter has on the outcome.
 
-* ### Varying volume depth 
+* ### Varying volume depth
+
    When `qv_depth` is varied, we see an increase in time per simulation. The `depth` parameter is the number of discrete time steps during which the circuit can run gates before the qubits decohere. Thus the increase or decrease of `qv_depth` will proportionally increase or decrease simulation time.
 
    | **Case 1** `qv_depth=5` | **Case 2** `qv_depth=10` |
@@ -199,6 +202,7 @@ We will now consider what affect each parameter has on the outcome.
 
 
 * ### Varying number of qubits
+
    Write a section discussing the affect of varying the number of qubits.<br>
    Vary `num_qubits` and see how high you can go. Label visualisation of maximum as `qv_experiment_MAXqubits.png` in the images folder.<br>
    I only expect one image when you have reached the highest number of qubits the system can handle.<br>
@@ -206,6 +210,7 @@ We will now consider what affect each parameter has on the outcome.
 
 
 *  ### Varying number of shots
+
    Write a section similar to [varying depth](#varying-volume-depth) discussing the affect of varying the number of shots.<br>
    Vary `num_shots`. Minimum of 2 images presented in an easily understandable format like a table or bullet points with discussion blocks.<br>
    >`shots`: used for sampling statistics, number of repetitions of each circuit. A larger number of shots will be more demanding on the system.
