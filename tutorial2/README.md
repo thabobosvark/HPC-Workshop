@@ -17,8 +17,12 @@ The following Linux commands will help you navigate the Linux ecosystem and mana
 | `mv <source> <destination>`| move a file | `mv myfile $HOME` |
 | `echo <variable>`       | print to the screen |  `echo "hello world"` 
 | `echo <variable> >> <file>`| print to some file. note ( ">>" appends and ">" deletes file contents and Writes to the file) | `echo "helloW0rld2" >> myfile`
-| `cat <file>`| "print the content of a file to the screen" | `cat myfile` |
-| `cat <source file> >>  <des file>`| "print the content of a file to some file"| `cat myfile >>  newfile` |
+| `cat <file>`| print the content of a file to the screen | `cat myfile` |
+| `cat <source file> >>  <des file>`| print the content of a file to some file| `cat myfile >>  newfile` |
+| `rm <file>` |  Deletes a file |  `rm myfile`|
+| `rm -r <directory>` |  Deletes a directory  |  `rm -r myfolder`|
+|`find <path> -name <filename>` | Search for a file | `find /home -name myfile.txt`
+
 
 ### 1.2  File and Directory Permissions
 
@@ -77,6 +81,9 @@ Monitoring Commands
 | `df`| Reports disk space usage of file systems.| `df -h`
 | `du`|Displays disk usage of files and directories.| `du -sh /var/log` (Shows the total size of /var/log directory)
 
+Another common system monitoring tool is **Grafana**, a visualization platform used to track system performance over time. It provides real-time dashboards, charts, and alerts by pulling data from sources like Prometheus and Node Exporter. Grafana is ideal for analyzing trends, detecting anomalies, and managing infrastructure at scale.
+
+In contrast, htop is a command-line process viewer that displays real-time system resource usage, including CPU, memory, and running processes. While Grafana focuses on historical data visualization with graphs and alerts, htop provides real-time monitoring and interactive process management.
 ## 4. Documentation (Github Markdown Files)
 
 Markdown is a lightweight markup language that allows you to format text using simple syntax. GitHub uses Markdown extensively for documentation, including README files, wikis, and issue tracking.
@@ -99,10 +106,10 @@ Using your fork of the GitHub repository, create a Markdown page titled TEAMNAME
 
 3. Using htop or btop on com1 or com2, identify the SSH process.
 
-4. Using your browser on your laptop/PC, access the Grafana dashboard at 155.238.172.16:3000 and take a screenshot of the "node-exporter:9100" host.
+4. Using your browser on your laptop/PC, access the Grafana dashboard at 155.238.172.16:3000 and take a screenshot of the "node-exporter:9100" host.  username = admin ; password = captain_password
 
-5. Use lscpu and the grep command to get the CPU details of com1 and com2. Use tmux to display both windows of com1 and com2 simultaneously. Show the following details: architecture, number of cores, and CPU flags.
+5. Use lscpu and the grep command to get the CPU details of head and com2. Use tmux to display both windows of head and com2 simultaneously. Show the following details: architecture, number of cores, and CPU flags.
 
-6. Use journalctl to retrieve all SSH logs.
+6. Use journalctl (on the head node) to retrieve all SSH logs from the last hour.
 
 **The markdown file should be uploaded under the tutorial2 directory on your repo** 
