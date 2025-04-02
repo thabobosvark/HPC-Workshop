@@ -6,7 +6,7 @@
 2. [Quantum Benchmark - Reading](#qiskit-quantum-volume)
 3. [Running micro-benchmark](#running-qiskit-quantum-volume-benchmark)
 4. [Visualising Result](#visualising-qv-result)
-5. [Rubric](#tutorial-deliverables)
+5. [Submission](#working-qv-benchmark)
 
 
 ## Application Benchmarking Introduction
@@ -20,9 +20,10 @@ IBM's Qiskit is an open-source [Software Development Kit (SDK)](https://www.ibm.
 [Qiskit-Aer](https://github.com/Qiskit/) is an extension to the Qiskit SDK for using high performance computing resources to simulate quantum computers and programs. It provides interfaces to run quantum circuits with or without noise using a number of various simulation methods. *Qiskit-Aer* supports leveraging *MPI* to improve the performance of simulation.
 
 
-> [!IMPORTANT]
+> [!CAUTION]
 >
-> This section aims to test your understanding of what you have learn so far. The python code below **will give an error** when you try to tun it. You will have to **debug** it to successfully meet the deliverables. Carefully read the error message as it may print out useful information such as a missing packages or the line where the error occurs.
+> This section aims to test your understanding of what you have learn so far. The python code below **will give an error** when you try to run it :grimacing: .
+> You will have to **debug** it to successfully meet the deliverables. Carefully read the error message as it may print out useful information such as a missing packages or the line where the error occurs.
 
 
 ## Running Qiskit Quantum Volume benchmark
@@ -48,37 +49,40 @@ IBM's Qiskit is an open-source [Software Development Kit (SDK)](https://www.ibm.
     ```
 
 3. Save the following in a Python script `qv_experiment.py`:<br>
-    ```python
-    from qiskit import *
-    from qiskit.circuit.library import *
-    from qiskit_aer import *
-    import time
-    import numpy as np
+   ```python
+   from qiskit import *
+   from qiskit.circuit.library import *
+   from qiskit_aer import *
+   import time
+   import numpy as np
 
-    def quant_vol(qubits=15, depth=10):
-        sim = AerSimulator(method='statevector', device='CPU')
-        circuit = QuantumVolume(qubits, depth, seed=0)
-        circuit.measure_all()
-        circuit = transpile(circuit, sim)
+   def quant_vol(qubits=15, depth=10):
+      sim = AerSimulator(method='statevector', device='CPU')
+      circuit = QuantumVolume(qubits, depth, seed=0)
+      circuit.measure_all()
+      circuit = transpile(circuit, sim)
 
-        start = time.time()
-        result = sim.run(circuit, shots=1, seed_simulator=12345).result()
-        time_val = time.time() - start
-        return time_val
+      start = time.time()
+      result = sim.run(circuit, shots=1, seed_simulator=12345).result()
+      time_val = time.time() - start
+      return time_val
 
 
-    num_qubits = np.arrange(2, 10)
-    qv_depth = 5
-    num_shots = 10
+   num_qubits = np.arange(2, 10)
+   qv_depth = 5
+   num_shots = 10
 
-    # Array for storing the output results
-    result_array = []
+   # Array for storing the output results
+   results_array = []
 
-    # iterate over qv depth and number of qubits
-    for i in num_qubits:
-        result_array[i] = quant_vol(qubits=i, shots=num_shots, depth=qv_depth)
-        # for debugging purposes you can optionally print the output
-    ```
+   # iterate over qv depth and number of qubits
+   for i in num_qubits:
+      results_array[i] = quant_vol(qubits=i, shots=num_shots, depth=qv_depth)
+      # for debugging purposes you can print out the results
+   ```
+
+   > [!TIP]
+   > Printing out results will help you know if you have run the benchmark successfully.
 
 4. Parameterize the following variables for the QV experiment.<br>
    These are used to generate the QV circuits and run them on a backend and on an ideal simulator:
@@ -92,7 +96,7 @@ IBM's Qiskit is an open-source [Software Development Kit (SDK)](https://www.ibm.
    ```
 
 ## Visualising QV Result
-Congratulations if you where able to solve the above problems. We managed to get a set of results, but what does that it mean? How can we better understand our data? The answer is *visulaising*.
+Congratulations :partying_face: if you where able to solve the above problems. We managed to get a set of results, but what does that it mean? How can we better understand our data? The answer is *visulaising*.
 
 As humans we find charts, graphs and illustrations much easier to understand. Because these graphics aid understanding we will be taking out result from above and visualising it using Jupyterlab.
 
@@ -134,8 +138,7 @@ Jupyter Notebooks provide a versatile and powerful environment for conducting sc
    * `--port` bind to the port that you granted access to in `nftables`
    * --no-browser, do not try to launch a browser directly on your head node.
 
-   > [!WARNING]
-   >
+   > [!NOTE]
    > An resulting error are not due to the firewall as TCP port 8889 is already open on the nftables(the firewall).
 
 4. Carefully copy your `<TOKEN>` from the command line after successfully launching your JupyterLab server.
@@ -167,18 +170,42 @@ Jupyter Notebooks provide a versatile and powerful environment for conducting sc
    ```
 8. From JupyterLab terminal, run the benchmark by executing the script you've just modified.
 
-When you view your result in JupyterLab, expect to see 
-![JupyterLab following above steps](image.png)
 
-## Tutorial Deliverables
-You will encounter most of the expected tasks as you work through the tutorial. The checklist below is just an overview of the main tasks
-- [ ] Modify the initial `qv_experiment.py` code such that it will execute correctly
-- [ ] Screenshot of successfully launched Jupyterlab
-- [ ] Through research, correctly identify the missing package and library need to visualise.
+## Working QV Benchmark
 
-Once you can successfully visualise, vary `num_qubits`, `qv_depth` and `num_shots`.<br>
+You will encounter most of the expected tasks while you work through the tutorial. Below you will paste all requested screenshots and deliverables mentioned.
 
-- [ ] `num_qubits` see how high you can go. Label visualisation of maximum as `qv_experiment_MAXqubits.png`.
-- [ ] vary `num_shots` and notice how it effects the graph. Label image of varied shots as `qv_experiment_shots<n>.png` where n is the number of shots.
-    - [ ] Minimum of 2 `qv_experiment_shots<n>.png` variations and original `qv_experiment.png` generated with tutorial values.
-    - [ ] Discuss effect of varying
+By completing the first successful run and visualisation of the Quantum Volume micro-benchmark, the python code in `qv_experiment.py` script is as follows:<br>
+```python
+# Paste you code here for marks
+```
+
+When the above code is run and visualised in JupyterLab, the image below is generated,<br>
+ 
+> Add image for of initial qv_experiment.py result. When
+> `num_qubits=(2,10)`, `qv_depth=5`, `num_shots=10`
+> This will also count as proof that you have successfully launched JupyterLab.
+
+We will now consider what affect each parameter has on the outcome.
+
+* ### Varying volume depth 
+   When `qv_depth` is varied, we see an increase in time per simulation. The `depth` parameter is the number of discrete time steps during which the circuit can run gates before the qubits decohere. Thus the increase or decrease of `qv_depth` will proportionally increase or decrease simulation time.
+
+   | **Case 1** `qv_depth=5` | **Case 2** `qv_depth=10` |
+   |-------------------------|--------------------------|
+   | `num_qubits=(2,20)`, `qv_depth=5`, `num_shots=10`<br>![qubits 20, depth 5, shots 10](images/qv_experiment_qbt20_dep5_shot10.png) | `num_qubits=(2,20)`, `qv_depth=10`, `num_shots=10`<br>![qubits 20, depth 10, shots 10](images/qv_experiment_qbt20_dep10_shot10.png) |
+
+   In the table above we see the vertical axis (y-axis) scale increase as `qv_depth` increases.
+
+
+* ### Varying number of qubits
+   Write a section discussing the affect of varying the number of qubits.<br>
+   Vary `num_qubits` and see how high you can go. Label visualisation of maximum as `qv_experiment_MAXqubits.png` in the images folder.<br>
+   I only expect one image when you have reached the highest number of qubits the system can handle.<br>
+   > `qubits`: number or list of physical qubits to be simulated for the experiment.
+
+
+*  ### Varying number of shots
+   Write a section similar to [varying depth](#varying-volume-depth) discussing the affect of varying the number of shots.<br>
+   Vary `num_shots`. Minimum of 2 images presented in an easily understandable format like a table or bullet points with discussion blocks.<br>
+   >`shots`: used for sampling statistics, number of repetitions of each circuit. A larger number of shots will be more demanding on the system.
