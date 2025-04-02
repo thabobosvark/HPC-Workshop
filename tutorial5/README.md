@@ -1,1 +1,27 @@
-# Tutorial 5
+# MPI
+MPI (Message Passing Interface) is used for parallel communication between processes. By communicating across processes, our programs can change from serial execution to parallel.<br>
+## Hello world Hello world
+We will first try using MPI to print "Hello world" to the terminal multiple times. Load OpenMPI from lmod:
+```
+ml openmpi
+# confirm that mpirun can be found
+which mpirun
+```
+Next, try to print a sentence out multiple times using MPI.
+```
+mpirun -n 2 echo "Hello world"
+```
+You should see your message appear on screen twice. Try increasing 2 to a higher number however, and you will recieve an error message.
+## Two heads are better than one
+The previous "Hello world" processes were only sent to the CPU on your current node. However, MPI is capable of sending processes to other connected nodes as well.<br>
+First, confirm the name of the node you are currently on:
+```
+hostname
+```
+Next, you will try to get the names of all the compute nodes in the cluster:
+```
+mpirun -H com1,com2 hostname
+```
+This should print out each of the node's names. Take note that they may not necessarily be in order; this is an issue common in parallel computing.
+# The Final Task
+Your team will be required to run benchmarks across the cluster
