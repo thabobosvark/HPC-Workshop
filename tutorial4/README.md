@@ -67,9 +67,9 @@ IBM's Qiskit is an open-source [Software Development Kit (SDK)](https://www.ibm.
         return time_val
 
 
-    num_qubits = np.arrange(, )
-    qv_depth = 
-    num_shots = 
+    num_qubits = np.arrange(2, 10)
+    qv_depth = 5
+    num_shots = 10
 
     # Array for storing the output results
     result_array = []
@@ -153,10 +153,10 @@ Jupyter Notebooks provide a versatile and powerful environment for conducting sc
 6. Login to your JupyterLab server using your `<TOKEN>` and Create a new terminal session.<br>
     Notice that the terminal session is still within your Qiskit-Aer environment.
 
-7. Append the following to your `qv_experiment.py` script:
+7. Using jupyterLab terminal, append the following to your `qv_experiment.py` script:
 
    ```python
-   # Fill in the missing package ans library
+   # Fill in the missing package and library
    import <package.library> as plt
 
    plt.xlabel('Number of qubits')
@@ -165,14 +165,20 @@ Jupyter Notebooks provide a versatile and powerful environment for conducting sc
    plt.title('Quantum Volume Experiment with depth=' + str(qv_depth))
    plt.savefig('qv_experiment.png')
    ```
-8. Run the benchmark by executing the script you've just written:
-
-   ```bash
-   python qv_experiment.py
-   ```
+8. From JupyterLab terminal, run the benchmark by executing the script you've just modified.
 
 When you view your result in JupyterLab, expect to see 
 ![JupyterLab following above steps](image.png)
 
 ## Tutorial Deliverables
-will do rubric later today
+You will encounter most of the expected tasks as you work through the tutorial. The checklist below is just an overview of the main tasks
+- [ ] Modify the initial `qv_experiment.py` code such that it will execute correctly
+- [ ] Screenshot of successfully launched Jupyterlab
+- [ ] Through research, correctly identify the missing package and library need to visualise.
+
+Once you can successfully visualise, vary `num_qubits`, `qv_depth` and `num_shots`.<br>
+
+- [ ] `num_qubits` see how high you can go. Label visualisation of maximum as `qv_experiment_MAXqubits.png`.
+- [ ] vary `num_shots` and notice how it effects the graph. Label image of varied shots as `qv_experiment_shots<n>.png` where n is the number of shots.
+    - [ ] Minimum of 2 `qv_experiment_shots<n>.png` variations and original `qv_experiment.png` generated with tutorial values.
+    - [ ] Discuss effect of varying
