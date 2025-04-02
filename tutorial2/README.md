@@ -91,3 +91,18 @@ Refer to the cheatsheet below and the README.md file under tutorial2, to see how
 [def]: markdown.jpg
 
 ## TASK.
+Using your fork of the GitHub repository, create a Markdown page titled TEAMNAME.md and include the following, with commands (where applicable) and screenshots:
+
+1. Get the status of the SSH service on the head node.
+
+2. Using systemctl, get the list of all running services on the head node.
+
+3. Using htop or btop on com1 or com2, identify the SSH process.
+
+4. Using your browser on your laptop/PC, access the Grafana dashboard at 155.238.172.16:3000 and take a screenshot of the "node-exporter:9100" host.
+
+5. Use lscpu and the grep command to get the CPU details of com1 and com2. Use tmux to display both windows of com1 and com2 simultaneously. Show the following details: architecture, number of cores, and CPU flags.
+
+6. Use journalctl to retrieve all SSH logs.
+
+**The markdown file should be uploaded under the tutorial2 directory on your repo** 
