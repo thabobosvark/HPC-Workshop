@@ -83,9 +83,9 @@ IBM's Qiskit is an open-source [Software Development Kit (SDK)](https://www.ibm.
       # for debugging purposes you can print out the results
    ```
 
-   > [!TIP]
-   > 
-   > Printing out results will help you know if you have run the benchmark successfully.
+> [!TIP]
+> 
+> Printing out results will help you know if you have run the benchmark successfully.
 
 4. Parameterize the following variables for the QV experiment.<br>
    These are used to generate the QV circuits and run them on a backend and on an ideal simulator:
@@ -142,9 +142,9 @@ Jupyter Notebooks provide a versatile and powerful environment for conducting sc
    * `--port` bind to the port that you granted access to in `nftables`
    * --no-browser, do not try to launch a browser directly on your head node.
 
-   > [!NOTE]
-   > 
-   > An resulting error are not due to the firewall as TCP port 8889 is already open on the nftables(the firewall).
+> [!NOTE]
+> 
+> An resulting error are not due to the firewall as TCP port 8889 is already open on the nftables(the firewall).
 
 4. Carefully copy your `<TOKEN>` from the command line after successfully launching your JupyterLab server.
 
